@@ -2,7 +2,7 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
-/***********While Loop****************
+/*********** While Loop ****************
  var myNewJobs = {};
  myNewJobs.job  = "Helper";
  var courses = 0;
@@ -16,7 +16,21 @@ This is empty on purpose! Your code to build the resume will go here.
         myNewJobs.job = "Retired";
     }
 }
- console.log(myNewJobs.job);*/
+ console.log(myNewJobs.job);
+
+ /*********** For Loop ***********************
+
+for (var i = 0; i<9; i++){
+    console.log(i);
+}
+
+ /*********** For-in Loop for Objects and Arrays *******************************
+
+ var countries = ["Brazil", "Netherlands", "Argentina", "France"];
+
+ for (country in countries){
+    console.log(countries[country]);
+}
 
 
 
@@ -122,8 +136,17 @@ var work = {
         }
     ]
 };
-var business = HTMLworkEmployer.replace("%data%", work.jobs[0].business);
-var position = HTMLworkTitle.replace("%data%", work.jobs[0].position);
+
+for (job in work.jobs){
+    var business = HTMLworkEmployer.replace("%data%", work.jobs[job].business);
+    var position = HTMLworkTitle.replace("%data%", work.jobs[job].position);
+
+    $("#workExperience").append(HTMLworkStart).append(business).append(position);
+}
+
+
+
+
 var address = HTMLworkLocation.replace("%data%", work.jobs[0].address);
 var years = HTMLworkDates.replace("%data%", work.jobs[0].yearsWorked);
 var description = HTMLworkDescription.replace("%data%", work.jobs[0].description);
@@ -135,7 +158,7 @@ var years2 = HTMLworkDates.replace("%data%", work.jobs[1].yearsWorked);
 var description2 = HTMLworkDescription.replace("%data%", work.jobs[1].description);
 
 
-$("#workExperience").append(HTMLworkStart).append(business).append(position).append(years).append(address).append(description).append(business2).append(position2).append(years2).append(address2).append(description2);
+//$("#workExperience").append(HTMLworkStart).append(business).append(position).append(years).append(address).append(description).append(business2).append(position2).append(years2).append(address2).append(description2);
 
 
 /*********Education Information**************************/
@@ -260,6 +283,7 @@ if(bio.skills !== ""){
     }
 
 }
+
 
 
 
