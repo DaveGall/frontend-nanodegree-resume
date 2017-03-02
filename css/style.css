@@ -20,7 +20,11 @@ h6 {
 
 .education-entry,
 .work-entry,
-.project-entry {
+.project-entry,
+.date-text,
+.location-text,
+.work-description,
+.work-employer{
   padding: 0 5%;
 }
 

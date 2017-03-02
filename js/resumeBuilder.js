@@ -140,25 +140,12 @@ var work = {
 for (job in work.jobs){
     var business = HTMLworkEmployer.replace("%data%", work.jobs[job].business);
     var position = HTMLworkTitle.replace("%data%", work.jobs[job].position);
-
-    $("#workExperience").append(HTMLworkStart).append(business).append(position);
+    var years = HTMLworkDates.replace("%data%", work.jobs[job].yearsWorked);
+    var address = HTMLworkLocation.replace("%data%", work.jobs[job].address);
+    var description = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $("#workExperience").append(HTMLworkStart).append(business + position).append(years).append(address).append(description);
 }
 
-
-
-
-var address = HTMLworkLocation.replace("%data%", work.jobs[0].address);
-var years = HTMLworkDates.replace("%data%", work.jobs[0].yearsWorked);
-var description = HTMLworkDescription.replace("%data%", work.jobs[0].description);
-
-var business2 = HTMLworkEmployer.replace("%data%", work.jobs[1].business);
-var position2 = HTMLworkTitle.replace("%data%", work.jobs[1].position);
-var address2 = HTMLworkLocation.replace("%data%", work.jobs[1].address);
-var years2 = HTMLworkDates.replace("%data%", work.jobs[1].yearsWorked);
-var description2 = HTMLworkDescription.replace("%data%", work.jobs[1].description);
-
-
-//$("#workExperience").append(HTMLworkStart).append(business).append(position).append(years).append(address).append(description).append(business2).append(position2).append(years2).append(address2).append(description2);
 
 
 /*********Education Information**************************/
