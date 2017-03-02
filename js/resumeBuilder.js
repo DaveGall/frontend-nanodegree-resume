@@ -137,17 +137,22 @@ var work = {
     ]
 };
 
-for (job in work.jobs){
-    var business = HTMLworkEmployer.replace("%data%", work.jobs[job].business);
-    var position = HTMLworkTitle.replace("%data%", work.jobs[job].position);
-    var years = HTMLworkDates.replace("%data%", work.jobs[job].yearsWorked);
-    var address = HTMLworkLocation.replace("%data%", work.jobs[job].address);
-    var description = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $("#workExperience").append(HTMLworkStart).append(business + position).append(years).append(address).append(description);
+
+
+function displayWork(){
+    for (job in work.jobs){
+        $("#workExperience").append(HTMLworkStart);
+        var business = HTMLworkEmployer.replace("%data%", work.jobs[job].business);
+        var position = HTMLworkTitle.replace("%data%", work.jobs[job].position);
+        var formattedTitle = business + position;
+        var years = HTMLworkDates.replace("%data%", work.jobs[job].yearsWorked);
+        var address = HTMLworkLocation.replace("%data%", work.jobs[job].address);
+        var description = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        $(".work-entry:last").append(formattedTitle).append(years).append(address).append(description);
+
+    }
 }
-
-
-
+displayWork();
 /*********Education Information**************************/
 
 var education = {
