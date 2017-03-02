@@ -2,6 +2,23 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
+/***********While Loop****************
+ var myNewJobs = {};
+ myNewJobs.job  = "Helper";
+ var courses = 0;
+ var myJobs = function(){
+      console.log("Made a course");
+};
+ while (myNewJobs.job === "Helper"){
+    myJobs();
+    courses = courses + 1;
+    if(courses === 10){
+        myNewJobs.job = "Retired";
+    }
+}
+ console.log(myNewJobs.job);*/
+
+
 
 //$("#main").append("Dave");
 //var awesomeThoughts = "I am Dave and I am AWESOME!!";
@@ -82,6 +99,8 @@ var bio = {
     "welcome": "Hello my name is Dave and I am a recent graduate from Full Sail University. I graduated with a BS in Web Design and Development.",
     "skills": ["HTML", "CSS", "JavaScript and jQuery", "Bootstrap", "some PHP"]
 };
+
+
 
 /*********Work Information**************************/
 
@@ -230,10 +249,17 @@ var myRole = HTMLheaderRole.replace("%data%", bio.role);
 var avatar = HTMLbioPic.replace("%data%", bio.pic);
 var welcome = HTMLwelcomeMsg.replace("%data%", bio.welcome);
 var mySkills = HTMLskills.replace("%data%", bio.skills);
-$("#header").append(mainName).append(myRole).append(avatar).append(mobile).append(email).append(github).append(bioAddress).append(welcome).append(HTMLskillsStart).append(mySkills);
+$("#header").append(mainName).append(myRole).append(avatar).append(mobile).append(email).append(github).append(bioAddress).append(welcome);
 
+if(bio.skills !== ""){
+    $("#header").append(HTMLskillsStart);
 
+    for(i=0;i<bio.skills.length;i++){
+        var skillSet = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(skillSet);
+    }
 
+}
 
 
 
